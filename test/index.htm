@@ -108,7 +108,6 @@
           const button = td.children[0];
           if(button) {
             button.addEventListener("click", function(e) {
-              alert("0");
               pendingClicks.push(parseInt(button.getAttribute('code')));
             });
           }
@@ -123,7 +122,6 @@
     function getPendingClick() {
       let pending = pendingClicks.shift();
       if(pending) {
-        alert("1");
         return pending;
       }
     }
