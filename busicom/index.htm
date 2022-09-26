@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=508, initial-scale=1.0"> 
+    <meta name="viewport" content="width=508px, initial-scale=1.0"> 
     <title>Busicom 141-PF Emulator</title>
     <style>
     .monospace {
@@ -86,6 +86,7 @@
 
     @media only screen and (hover: none) and (pointer: coarse){
     .desktoponly {display:none;}
+    .main_flex {flex-direction: column}
     }
     </style>
     <script type="module">
@@ -131,7 +132,7 @@
     </script>
   </head>
   <body>
-  <div style="display: flex">
+  <div style="display: flex" class="main_flex">
     <aside class="monospace desktoponly">
     <table id="ram">
       <tr><th>RAM 0</th><th> </th><th colspan=16>Characters</th><th></th><th colspan=4>Status</th>
