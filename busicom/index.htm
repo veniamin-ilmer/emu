@@ -80,14 +80,21 @@
     .red {
       color: red;
     }
+    
+    //CSS
+    .desktoponly {display:display;}
+
+    @media (max-width : 320px) {
+    .desktoponly {display:none;}
+    }
     </style>
     <script type="module">
     // Import our outputted wasm ES6 module
     // Which, export default's, an initialization function
-    import init from "./busicom/busicom.js";
+    import init from "./busicom.js";
 //    const runWasm = async () => {
       // Instantiate our wasm module
-    const wasm = await init("./busicom/busicom_bg.wasm");
+    const wasm = await init("./busicom_bg.wasm");
     wasm.run();
     </script>
     
@@ -124,7 +131,7 @@
     </script>
   </head>
   <body>
-  <div style="display: flex">
+  <div style="display: flex" class="desktoponly">
     <aside class="monospace">
     <table id="ram">
       <tr><th>RAM 0</th><th> </th><th colspan=16>Characters</th><th></th><th colspan=4>Status</th>
