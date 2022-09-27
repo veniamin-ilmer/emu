@@ -121,14 +121,22 @@
       document.onkeypress = function (e) {
         e = e || window.event;
         if(!e.shiftKey) {
-          if(e.keyCode == 48) { //7
-            pendingClicks.push(161);
-          }
-          if(e.keyCode == 48) { //4
-            pendingClicks.push(158);
-          }
-          if(e.keyCode == 49) { //1
+          if(e.keyCode == 55) { //7
+            pendingClicks.push(153);
+          } else if(e.keyCode == 54) { //6
+            pendingClicks.push(146);
+          } else if(e.keyCode == 53) { //5
+            pendingClicks.push(150);
+          } else if(e.keyCode == 52) { //4
+            pendingClicks.push(154);
+          } else if(e.keyCode == 51) { //3
+            pendingClicks.push(147);
+          } else if(e.keyCode == 50) { //2
+            pendingClicks.push(151);
+          } else if(e.keyCode == 49) { //1
             pendingClicks.push(155);
+          } else if(e.keyCode == 48) { //0
+            pendingClicks.push(156);
           }
         }
       };
@@ -201,11 +209,11 @@
       <div style="font-size:24px; user-select: none">BUSICOM 141-PF</div>
       <div>
         <table id="keyboard">
-          <tr><td><button code="1" id="advance_printer" tabstop="-1">Move<br>Up</button></td><td style="width:20px"></td><td colspan=3><form oninput="result.value=digits.value"><input type="range" id="digits" min="0" max="8" value=0 id="digits" tabstop="-1"></br><output name="result" for="digits" id="digits_label">0</output> decimal points</form></td><td></td><td colspan=2><label><input type="radio" name="rounding" id="truncate" tabstop="-1">Truncate</label><br/><label><input type="radio" name="rounding" checked id="float" tabstop="-1">Float</label><br/><label><input type="radio" name="rounding" id="round" tabstop="-1">Round</label></td><td></td><td colspan=2><div class="led" id="overflow_led">Overflow</div><div class="led" id="negative_led">Negative</div><div class="led" id="memory_led">Memory</div></td></tr>
-          <tr><td><button code="157" class="red" id="sign" tabstop="-1">Sign</button></td><td></td><td><button code="153" tabstop="-1">7</button></td><td><button code="149" tabstop="-1">8</button></td><td><button code="145" tabstop="-1">9</button></td><td style="width:20px"></td><td><button code="141" tabstop="-1">-</button></td><td><button code="137" tabstop="-1">◇</button></td><td style="width:20px"></td><td><button code="133" tabstop="-1">√</button></td><td><button code="129">CM</button></td></tr>
-          <tr><td><button code="158" id="exchange" tabstop="-1">Ex<br/>change</button></td><td></td><td><button code="154" tabstop="-1">4</button></td><td><button code="150" tabstop="-1">5</button></td><td><button code="146" tabstop="-1">6</button></td><td></td><td rowspan=2><button code="142" id="plus" tabstop="-1">+</button></td><td><button code="138" tabstop="-1">÷</button></td><td></td><td><button code="134" tabstop="-1">%</button></td><td><button code="130" tabstop="-1">RM</button></td></tr>
-          <tr><td><button code="159" tabstop="-1">CE</button></td><td></td><td><button code="155" tabstop="-1">1</button></td><td><button code="151" tabstop="-1">2</button></td><td><button code="147" tabstop="-1">3</button></td><td></td><td><button code="139" tabstop="-1">×</button></td><td> </td><td><button code="135" class="red" tabstop="-1">M&#8791;</button></td><td><button code="131" class="red" tabstop="-1">M-</button></td></tr>
-          <tr><td><button code="160" tabstop="-1">C</button></td><td></td><td><button code="156" tabstop="-1">0</button></td><td><button code="152" tabstop="-1">00</button></td><td><button code="148" tabstop="-1">.</button></td><td></td><td colspan=2><button code="140" id="equals" tabstop="-1">=</button></td><td></td><td><button code="136" tabstop="-1">M&#x2A72;</button></td><td><button code="132" tabstop="-1">M+</button></td></tr>
+          <tr><td><button code="1" id="advance_printer">Move<br>Up</button></td><td style="width:20px"></td><td colspan=3><form oninput="result.value=digits.value"><input type="range" id="digits" min="0" max="8" value=0 id="digits"></br><output name="result" for="digits" id="digits_label">0</output> decimal points</form></td><td></td><td colspan=2><label><input type="radio" name="rounding" id="truncate">Truncate</label><br/><label><input type="radio" name="rounding" checked id="float">Float</label><br/><label><input type="radio" name="rounding" id="round">Round</label></td><td></td><td colspan=2><div class="led" id="overflow_led">Overflow</div><div class="led" id="negative_led">Negative</div><div class="led" id="memory_led">Memory</div></td></tr>
+          <tr><td><button code="157" class="red" id="sign"Sign</button></td><td></td><td><button code="153">7</button></td><td><button code="149">8</button></td><td><button code="145">9</button></td><td style="width:20px"></td><td><button code="141">-</button></td><td><button code="137">◇</button></td><td style="width:20px"></td><td><button code="133">√</button></td><td><button code="129">CM</button></td></tr>
+          <tr><td><button code="158" id="exchange">Ex<br/>change</button></td><td></td><td><button code="154">4</button></td><td><button code="150">5</button></td><td><button code="146">6</button></td><td></td><td rowspan=2><button code="142" id="plus">+</button></td><td><button code="138">÷</button></td><td></td><td><button code="134">%</button></td><td><button code="130">RM</button></td></tr>
+          <tr><td><button code="159">CE</button></td><td></td><td><button code="155">1</button></td><td><button code="151">2</button></td><td><button code="147">3</button></td><td></td><td><button code="139">×</button></td><td> </td><td><button code="135" class="red">M&#8791;</button></td><td><button code="131" class="red">M-</button></td></tr>
+          <tr><td><button code="160">C</button></td><td></td><td><button code="156">0</button></td><td><button code="152">00</button></td><td><button code="148">.</button></td><td></td><td colspan=2><button code="140" id="equals">=</button></td><td></td><td><button code="136">M&#x2A72;</button></td><td><button code="132">M+</button></td></tr>
         </table>
       </div>
     </article>
