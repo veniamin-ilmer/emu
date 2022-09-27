@@ -120,8 +120,12 @@
       
       document.onkeypress = function (e) {
         e = e || window.event;
-        if(!e.shiftKey) {
-          if(e.keyCode == 55) { //7
+        if(!e.shiftKey && !e.ctrlKey && !e.altKey && !e.metaKey) {
+          if(e.keyCode == 57) { //9
+            pendingClicks.push(145);
+          } else if(e.keyCode == 56) { //8
+            pendingClicks.push(149);
+          } else if(e.keyCode == 55) { //7
             pendingClicks.push(153);
           } else if(e.keyCode == 54) { //6
             pendingClicks.push(146);
@@ -137,7 +141,22 @@
             pendingClicks.push(155);
           } else if(e.keyCode == 48) { //0
             pendingClicks.push(156);
+          } else if(e.keyCode == 191) { //divide
+            pendingClicks.push(138);
+          } else if(e.keyCode == 173) { //-
+            pendingClicks.push(141);
+          } else if(e.keyCode == 61) { //=
+            pendingClicks.push(140);
           }
+        } else if(e.shiftKey && !e.ctrlKey && !e.altKey && !e.metaKey) {
+          if(e.keyCode == 61) { //+
+            pendingClicks.push(142);
+          } else if(e.keyCode == 56) { //*
+            pendingClicks.push(139);
+          } else if(e.keyCode == 53) { //%
+            pendingClicks.push(134);
+          } else if(e.keyCode == 51) { //# for diamond
+            pendingClicks.push(137);
         }
       };
       
@@ -210,7 +229,7 @@
       <div>
         <table id="keyboard">
           <tr><td><button code="1" id="advance_printer">Move<br>Up</button></td><td style="width:20px"></td><td colspan=3><form oninput="result.value=digits.value"><input type="range" id="digits" min="0" max="8" value=0 id="digits"></br><output name="result" for="digits" id="digits_label">0</output> decimal points</form></td><td></td><td colspan=2><label><input type="radio" name="rounding" id="truncate">Truncate</label><br/><label><input type="radio" name="rounding" checked id="float">Float</label><br/><label><input type="radio" name="rounding" id="round">Round</label></td><td></td><td colspan=2><div class="led" id="overflow_led">Overflow</div><div class="led" id="negative_led">Negative</div><div class="led" id="memory_led">Memory</div></td></tr>
-          <tr><td><button code="157" class="red" id="sign"Sign</button></td><td></td><td><button code="153">7</button></td><td><button code="149">8</button></td><td><button code="145">9</button></td><td style="width:20px"></td><td><button code="141">-</button></td><td><button code="137">◇</button></td><td style="width:20px"></td><td><button code="133">√</button></td><td><button code="129">CM</button></td></tr>
+          <tr><td><button code="157" class="red" id="sign">Sign</button></td><td></td><td><button code="153">7</button></td><td><button code="149">8</button></td><td><button code="145">9</button></td><td style="width:20px"></td><td><button code="141">-</button></td><td><button code="137">◇</button></td><td style="width:20px"></td><td><button code="133">√</button></td><td><button code="129">CM</button></td></tr>
           <tr><td><button code="158" id="exchange">Ex<br/>change</button></td><td></td><td><button code="154">4</button></td><td><button code="150">5</button></td><td><button code="146">6</button></td><td></td><td rowspan=2><button code="142" id="plus">+</button></td><td><button code="138">÷</button></td><td></td><td><button code="134">%</button></td><td><button code="130">RM</button></td></tr>
           <tr><td><button code="159">CE</button></td><td></td><td><button code="155">1</button></td><td><button code="151">2</button></td><td><button code="147">3</button></td><td></td><td><button code="139">×</button></td><td> </td><td><button code="135" class="red">M&#8791;</button></td><td><button code="131" class="red">M-</button></td></tr>
           <tr><td><button code="160">C</button></td><td></td><td><button code="156">0</button></td><td><button code="152">00</button></td><td><button code="148">.</button></td><td></td><td colspan=2><button code="140" id="equals">=</button></td><td></td><td><button code="136">M&#x2A72;</button></td><td><button code="132">M+</button></td></tr>
