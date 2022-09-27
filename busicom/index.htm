@@ -118,6 +118,21 @@
         }
       }
       
+      document.onkeypress = function (e) {
+        e = e || window.event;
+        if(!e.shiftKey) {
+          if(e.keyCode == 48) { //7
+            pendingClicks.push(161);
+          }
+          if(e.keyCode == 48) { //4
+            pendingClicks.push(158);
+          }
+          if(e.keyCode == 49) { //1
+            pendingClicks.push(155);
+          }
+        }
+      };
+      
       document.getElementById("digits_label").value=document.getElementById("digits").value;
       
     }, false);
