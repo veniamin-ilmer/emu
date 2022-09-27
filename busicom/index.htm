@@ -84,7 +84,7 @@
     
     .desktoponly {display:display;}
 
-    @media only screen and (hover: none) and (pointer: coarse){
+    @media only screen and (max-width: 900px) {
     .desktoponly {display:none;}
     .main_flex {flex-direction: column}
     }
@@ -120,44 +120,42 @@
       
       document.onkeypress = function (e) {
         e = e || window.event;
-        if(!e.shiftKey && !e.ctrlKey && !e.altKey && !e.metaKey) {
-          if(e.keyCode == 57) { //9
-            pendingClicks.push(145);
-          } else if(e.keyCode == 56) { //8
-            pendingClicks.push(149);
-          } else if(e.keyCode == 55) { //7
-            pendingClicks.push(153);
-          } else if(e.keyCode == 54) { //6
-            pendingClicks.push(146);
-          } else if(e.keyCode == 53) { //5
-            pendingClicks.push(150);
-          } else if(e.keyCode == 52) { //4
-            pendingClicks.push(154);
-          } else if(e.keyCode == 51) { //3
-            pendingClicks.push(147);
-          } else if(e.keyCode == 50) { //2
-            pendingClicks.push(151);
-          } else if(e.keyCode == 49) { //1
-            pendingClicks.push(155);
-          } else if(e.keyCode == 48) { //0
-            pendingClicks.push(156);
-          } else if(e.keyCode == 191) { //divide
-            pendingClicks.push(138);
-          } else if(e.keyCode == 173) { //-
-            pendingClicks.push(141);
-          } else if(e.keyCode == 61) { //=
-            pendingClicks.push(140);
-          }
-        } else if(e.shiftKey && !e.ctrlKey && !e.altKey && !e.metaKey) {
-          if(e.keyCode == 61) { //+
-            pendingClicks.push(142);
-          } else if(e.keyCode == 56) { //*
-            pendingClicks.push(139);
-          } else if(e.keyCode == 53) { //%
-            pendingClicks.push(134);
-          } else if(e.keyCode == 51) { //# for diamond
-            pendingClicks.push(137);
-          }
+        if(e.keyCode == 57) { //9
+          pendingClicks.push(145);
+        } else if(e.keyCode == 56) { //8
+          pendingClicks.push(149);
+        } else if(e.keyCode == 55) { //7
+          pendingClicks.push(153);
+        } else if(e.keyCode == 54) { //6
+          pendingClicks.push(146);
+        } else if(e.keyCode == 53) { //5
+          pendingClicks.push(150);
+        } else if(e.keyCode == 52) { //4
+          pendingClicks.push(154);
+        } else if(e.keyCode == 51) { //3
+          pendingClicks.push(147);
+        } else if(e.keyCode == 50 ) { //2
+          pendingClicks.push(151);
+        } else if(e.keyCode == 49) { //1
+          pendingClicks.push(155);
+        } else if(e.keyCode == 48) { //0
+          pendingClicks.push(156);
+        } else if(e.keyCode == 47) { //divide
+          pendingClicks.push(138); event.preventDefault(); return false;
+        } else if(e.keyCode == 45) { //-
+          pendingClicks.push(141);
+        } else if(e.keyCode == 61 | e.keyCode == 13) { //=
+          pendingClicks.push(140);
+        } else if(e.keyCode == 42) { //*
+          pendingClicks.push(139);
+        } else if(e.keyCode == 43) { //+
+          pendingClicks.push(142);
+        } else if(e.keyCode == 46) { //.
+          pendingClicks.push(148);
+        } else if(e.keyCode == 35) { //# for diamond
+          pendingClicks.push(137);
+        } else if(e.keyCode == 37) { //%
+          pendingClicks.push(134);
         }
       };
       
@@ -211,7 +209,7 @@
       <tr><th>Shift 2</th><td>○</td><td>○</td><td>○</td><td>○</td><td>○</td><td>○</td><td>○</td><td>○</td><td>○</td><td>○</td></tr>
     </table>
     </aside>
-    <article style="flex: 1; display:flex; flex-direction: column; align-items: center" class="monospace">
+    <article style="flex: 1; display:flex; flex-direction: column; align-items: center; padding-right: 20px" class="monospace">
       <div style="height:300px">
         <table id="paper" style="height:300px">
           <tr><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td></tr>
